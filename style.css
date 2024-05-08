@@ -2,13 +2,40 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: black;
+   
 }
 
-header {
-    background-color: aquamarine;
+.header{
+    padding-top: 10px;
+    background-color: black;
+    box-shadow: 5px 15px #888888;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.teks-header {
+    margin-top: 18px;
+    color: white;
+
+}
+
+.navbar {
+    color: white;
     text-align: center;
+    gap: 20px;
+    justify-content:space-between ;
 }
 
-footer > p {
+.teks-navbar a {
+    color: white;
+    font-size: 20px;
+    justify-content: space-between;
+}
+
+
+footer  p {
+    color: white;
     text-align: center;
 }
