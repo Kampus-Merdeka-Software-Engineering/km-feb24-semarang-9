@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    padding: 10px;
+    background-color: rgba(23, 36, 156, 1);
+    box-shadow: 5px 5px 10px #888888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-header {  
+    padding-right: 220px;  
+}
+
+
+.nav-header a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
+    font-family: 'Times New Roman', Times, serif;
+    gap: 200px;
+}
+
+.logo-header{
+    margin-right: auto; /* This will push the navigation to the right */
+    margin-left: 25px;
+    width: 500px; /* Adjust size as needed */
+    height: auto;
+    display: flex;
+}
+
+.logo-header h2 {
+    margin: auto;
+    margin-right: 200px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(255, 229, 0, 1);
+}
+
+.nav a:hover {
+    text-decoration: underline;
+    color: black; /* Change color on hover */
+}
