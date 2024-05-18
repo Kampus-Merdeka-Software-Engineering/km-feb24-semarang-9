@@ -1,0 +1,234 @@
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .header {
+        display: flex;
+        background-color: rgba(23, 36, 156, 1);
+    }
+
+    .teks-header {
+        margin-top: 35px;
+        color:rgba(255, 229, 0, 1);
+    }
+
+    .teks-header h2 {
+        font-size: 16px;
+    }
+
+    .navbar {
+        margin: auto;
+        margin-left: 900px;
+        gap: 200px;
+        
+    }
+
+    .teks-navbar a {
+        gap: 50px;
+        color: white;
+        text-decoration: none;
+        padding-right: 55px;
+
+    }
+
+    .katalog-search {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 30px;
+        background-color:  rgba(23, 36, 156, 1);
+    }
+
+   .katalog-search-button {
+        display: flex;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        gap: 100px;
+        background-color:  rgba(23, 36, 156, 1);
+    }
+
+    .katalog-search-button input {
+        padding: 10px;
+        width: 200px;
+    }    
+
+    .katalog-search-button .button-search {
+        padding: 10px 20px;
+        background-color: rgba(0, 55, 252, 1);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color:white;
+        width: 150px;
+    }
+
+    .katalog-content {
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+    }
+
+    .katalog-content1 {
+        display: flex;
+        justify-content: center;
+        gap: 139px;
+        margin-bottom: 70px;
+    }
+
+    .katalog-box1 {
+        background-color: rgba(217, 217, 217, 1);
+        width: 553px;
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+    }
+
+    .katalog-content1-line {
+        background-color:rgba(120, 120, 120, 1);
+        width: auto;
+        height: 2px;
+        margin-bottom: 20px;
+    }
+
+    .button-chat1 {
+        background-color: rgba(0, 55, 252, 1);
+        color: white;
+        width: 165px;
+        height: 49px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 60%;
+    }
+
+    .katalog-box2 {
+        background-color: rgba(217, 217, 217, 1);
+        width: 553px;
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+    }
+
+    .button-chat2 {
+        background-color: rgba(0, 55, 252, 1);
+        color: white;
+        width: 165px;
+        height: 49px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 60%;
+    }
+
+    .katalog-content2 {
+        display: flex;
+        justify-content: center;
+        gap: 139px;
+        margin-bottom: 70px;
+    }
+
+    .katalog-box3 {
+        background-color: rgba(217, 217, 217, 1);
+        width: 553px;
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+    }
+
+    .katalog-content2-line {
+        background-color:rgba(120, 120, 120, 1);
+        width: auto;
+        height: 2px;
+        margin-bottom: 20px;
+    }
+
+    .button-chat3 {
+        background-color: rgba(0, 55, 252, 1);
+        color: white;
+        width: 165px;
+        height: 49px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 60%;
+    }
+
+    .katalog-box4 {
+        background-color: rgba(217, 217, 217, 1);
+        width: 553px;
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+    }
+
+    .button-chat4 {
+        background-color: rgba(0, 55, 252, 1);
+        color: white;
+        width: 165px;
+        height: 49px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 60%;
+    }
+
+    .katalog-content3 {
+        display: flex;
+        justify-content: center;
+        gap: 139px;
+    }
+
+    .katalog-box5 {
+        background-color: rgba(217, 217, 217, 1);
+        width: 553px;
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+    }
+
+    .katalog-content3-line {
+        background-color:rgba(120, 120, 120, 1);
+        width: auto;
+        height: 2px;
+        margin-bottom: 20px;
+    }
+
+    .button-chat5 {
+        background-color: rgba(0, 55, 252, 1);
+        color: white;
+        width: 165px;
+        height: 49px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 60%;
+    }
+
+    .katalog-box6 {
+        background-color: rgba(217, 217, 217, 1);
+        width: 553px;
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+    }
+
+    .button-chat6 {
+        background-color: rgba(0, 55, 252, 1);
+        color: white;
+        width: 165px;
+        height: 49px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 60%;
+    }
+
