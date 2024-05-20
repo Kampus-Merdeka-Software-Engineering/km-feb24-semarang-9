@@ -2,52 +2,45 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-body {
-    background-color: white;
-    font-family: Arial, sans-serif;
+    background-color:  rgba(23, 36, 156, 1);
 }
 
 .header {
-    padding: 10px;
-    background-color: rgba(23, 36, 156, 1);
-    box-shadow: 5px 5px 10px #888888;
     display: flex;
     align-items: center;
-    justify-content: center;
+    background-color: rgba(23, 36, 156, 1);
 }
 
-.nav-header {  
-    padding-right: 220px;  
+.img-header {
+    display: flex;
+    align-items: center;
+}
+
+.teks-header {
+    color:rgba(255, 229, 0, 1);
+    h2 {
+        font-size: 16px;
+    }
 }
 
 
-.nav-header a {
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: calc(100% - 500px);
+    gap: 20px;
+    
+}
+
+.navbar a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    margin: 0 10px;
-    font-family: 'Times New Roman', Times, serif;
-    gap: 200px;
 }
 
-.logo-header{
-    margin-right: auto; /* This will push the navigation to the right */
-    margin-left: 25px;
-    width: 500px; /* Adjust size as needed */
-    height: auto;
-    display: flex;
-}
-
-.logo-header h2 {
-    margin: auto;
-    margin-right: 200px;
-    font-family: 'Times New Roman', Times, serif;
-    color: rgba(255, 229, 0, 1);
-}
-
-.nav a:hover {
-    text-decoration: underline;
-    color: black; /* Change color on hover */
+.content {
+    background-color: rgba(217, 217, 217, 1);
+    width: auto;
+    height: 497px;
+    margin: 30px;
 }
