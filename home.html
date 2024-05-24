@@ -50,23 +50,6 @@
             
             <table style="border-collapse: collapse; width: 100%" border="2">
                 <thead>
-                    <tr>
-                        <th>
-                           
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Find" oninput="filterTable(1, this)">
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Find" oninput="filterTable(2, this)">
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Find" oninput="filterTable(3, this)">
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Find" oninput="filterTable(4, this)">
-                        </th>
-                    </tr>
                   <th>NO</th>
                   <th>BOROUGH</th>
                   <th>ADDRESS</th>
@@ -157,27 +140,6 @@
         navbar.classList.toggle('active');
     }
 
-    function filterTable(columnIndex, input) {
-        const filterValue = input.value.toUpperCase();
-        const table = document.querySelector("table");
-        const rows = table.querySelectorAll("tr");
     
-        for (let i = 1; i < rows.length; i++) {
-            const row = rows[i];
-            const cells = row.querySelectorAll("td")[columnIndex];
-            if (cells) {
-                const cellText = cells.textContent || cells.innerText;
-                if (cellText.toUpperCase().indexOf(filterValue) > -1) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = "none";
-                }
-            }
-        }
-    }
-    
-
 </script>
-
-
 </html>
