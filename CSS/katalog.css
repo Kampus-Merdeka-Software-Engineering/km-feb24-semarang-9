@@ -29,6 +29,7 @@
     justify-content: flex-end;
     align-items: center;
     width: calc(100% - 500px);
+    margin-left: 240px;
     gap: 20px;
     
 }

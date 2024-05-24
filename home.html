@@ -16,20 +16,168 @@
                 <h2>Real Estate Findr</h2>
             </div>
         </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
        
-        <div class="navbar">
+        <div class="navbar" id="navbar">
             <a href="home.html">Home</a>
             <a href="katalog.html">Katalog</a>
             <a href="#">Customer Service</a>
-            <a href="#">Abou Us</a>
+            <a href="#">About Us</a>
         </div>
     </div>
 
     <main>
         <div class="content">
+            <div class="dashbord">
+                <div class="card">
+                    <h3>Total Penjualan</h3>
+                    <p id="total-sales"></p>
+                </div>
+                <div class="card">
+                    <h3>Rata-rata Harga Penjualan</h3>
+                    <p id="average-price"></p>
+                </div>
+                <div class="card">
+                    <h3>Total Nilai Penjualan</h3>
+                    <p id="total-value"></p>
+                </div>
+            </div>
             
+            <table style="border-collapse: collapse; width: 100%" border="2">
+                <thead>
+                    <tr>
+                        <th>
+                           
+                        </th>
+                        <th>
+                            <input type="text" placeholder="Find" oninput="filterTable(1, this)">
+                        </th>
+                        <th>
+                            <input type="text" placeholder="Find" oninput="filterTable(2, this)">
+                        </th>
+                        <th>
+                            <input type="text" placeholder="Find" oninput="filterTable(3, this)">
+                        </th>
+                        <th>
+                            <input type="text" placeholder="Find" oninput="filterTable(4, this)">
+                        </th>
+                    </tr>
+                  <th>NO</th>
+                  <th>BOROUGH</th>
+                  <th>ADDRESS</th>
+                  <th>LOT</th>
+                  <th>SALE PRICE</th>
+                </thead>
+                <tbody id="data">
+                </tbody>
+            </table>
         </div>
     </main>
-
+    <div class="katalog-search">
+        <div class="katalog-search-button">
+            <input type="text" placeholder="Lokasi">
+            <input type="text" placeholder="Tipe Rumah">
+            <input type="text" placeholder="Kamar Tidur">
+            <input type="text" placeholder="Luas">
+            <input type="text" placeholder="Harga">
+            <button class="button-search">
+              <i class="fas fa-search"></i> Cari
+            </button>
+        </div>
+    </div>
+    <div class="katalog-content">
+        <h1>Our Recomendation</h1>
+    </div>
+    <div class="katalog-content1">
+        <div class="katalog-box1">
+            <div class="katalog-content1-line"></div>
+        </div>
+        <div class="katalog-box2">
+            <div class="katalog-content1-line"></div>
+        </div>
+        <div class="katalog-box3">
+            <div class="katalog-content1-line"></div>
+        </div>
+        <div class="katalog-box4">
+            <div class="katalog-content1-line"></div>
+        </div>
+    </div>
+ 
 </body>
+
+<script>
+    const dataTable = document.getElementById("data");
+
+    let page = 1;
+    let limit = 15;
+
+    fetch("./data/data-tim-09.json")
+    .then((res) => {
+        if (!res.ok) {
+        throw new Error
+            (`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+    })
+    .then((data) => {
+        const filteredData = data.filter(
+        (el) => el['SALE PRICE'] >= 200000
+        )
+        .sort((a, b) => a['SALE PRICE'] - b['SALE PRICE']);
+
+        let dataBody = "";
+
+    for (let i = 0; i < filteredData.length; i++) {
+    if (i >= (page - 1) * limit && i < limit * page) {
+        dataBody += `
+        <tr>
+            <td>${i + 1}</td>
+            <td>${filteredData[i].BOROUGH}</td>
+            <td>${filteredData[i].NEIGHBORHOOD}</td>
+            <td>${filteredData[i]['TOTAL UNITS']}</td>
+            <td>${filteredData[i]['SALE PRICE']}</td>
+        </tr>
+        `;
+    }
+    }
+    dataTable.innerHTML = dataBody;
+    })
+    .catch((error) => {
+        console.log({ error })
+        alert("Error: " + JSON.stringify(error));
+    });
+
+    function toggleMenu() {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('active');
+    }
+
+    function filterTable(columnIndex, input) {
+        const filterValue = input.value.toUpperCase();
+        const table = document.querySelector("table");
+        const rows = table.querySelectorAll("tr");
+    
+        for (let i = 1; i < rows.length; i++) {
+            const row = rows[i];
+            const cells = row.querySelectorAll("td")[columnIndex];
+            if (cells) {
+                const cellText = cells.textContent || cells.innerText;
+                if (cellText.toUpperCase().indexOf(filterValue) > -1) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            }
+        }
+    }
+    
+
+</script>
+
+
 </html>
