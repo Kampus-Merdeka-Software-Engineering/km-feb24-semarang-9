@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             // Objek untuk menyimpan total penjualan dan jumlah penjualan untuk setiap tax class
             const taxClassSales = {};
-            
+            let totalSales = 0;
+            let totalCount = 0;
+
             // Menghitung total penjualan dan jumlah penjualan untuk setiap tax class
             data.forEach(item => {
                 const taxClass = item['TAX CLASS AT TIME OF SALE'];
@@ -16,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 taxClassSales[taxClass].total += salePrice;
                 taxClassSales[taxClass].count++;
+                
+                totalSales += salePrice;
+                totalCount++;
             });
 
             // Memastikan angka kelas nomor 3 ada dalam data
@@ -44,11 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     datasets: [{
                         label: 'Average Sales Price',
                         data: taxClassAveragesData,
-                        backgroundColor: [
-                            'red',
-                            'yellow',
-                            'blue',
-                            'green'
+                        backgroundColor:  [
+                            'red', // Warna untuk batang pertama
+                            'yellow',  // Warna untuk batang kedua
+                            'blue',  // Warna untuk batang ketiga
+                            'green',  // Warna untuk batang keempat
                         ],
                         borderColor: 'black',
                         borderWidth: 1
@@ -57,12 +62,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 options: {
                     scales: {
                         y: {
-                            beginAtZero: true // Memulai sumbu y dari 0
-                            
+                            beginAtZero: true,
                         }
                     }
                 }
             });
+
+            // Menampilkan total penjualan dan rata-rata harga penjualan di elemen HTML
+            const totalSalesElement = document.getElementById('total-sales');
+            const averagePriceElement = document.getElementById('average-price');
+            const totalValueElement = document.getElementById('total-value');
+
+            totalSalesElement.innerText = totalCount;
+            averagePriceElement.innerText = (totalSales / totalCount).toFixed(2);
+            totalValueElement.innerText = totalSales.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
         })
         .catch(error => console.error('Error fetching the data:', error));
 });
