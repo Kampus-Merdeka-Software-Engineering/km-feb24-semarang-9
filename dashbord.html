@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Property Sales Data</title>
+    <link rel="stylesheet" href="CSS/dashbord.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="img-header">
+            <img width="110" height="90" src="Gambar/Home-Logo.png" alt="Revou">
+            <div class="teks-header">
+                <h2>Real Estate Findr</h2>
+            </div>
+        </div>
+       
+        <div class="navbar" id="navbar">
+            <a href="home.html">Home</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="dashbord.html">Dashboard</a>
+            <a href="#">About Us</a>
+        </div>
+    </div>
+
+    <div class="dashbord">
+        <div class="card">
+            <h3>Total Penjualan</h3>
+            <p id="total-sales"></p>
+        </div>
+        <div class="card">
+            <h3>Rata-rata Harga Penjualan</h3>
+            <p id="average-price"></p>
+        </div>
+        <div class="card">
+            <h3>Total Nilai Penjualan</h3>
+            <p id="total-value"></p>
+        </div>
+    </div>
+
+    <div class="chart">
+        <div class="sales-price">
+            <h1>Total Sales Price by Borough</h1>
+            <canvas id="salesChart"></canvas>
+        </div>
+        <div class="tax-class">
+            <h1>Average Sales Price by Tax Class</h1>
+            <canvas id="taxClassSalesChart"></canvas>
+        </div>
+    </div>
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="Javascript/sales-price.js"></script>
+<script src="Javascript/tax-class.js"></script>
+</body>
+</html>

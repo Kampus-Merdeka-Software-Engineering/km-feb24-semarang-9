@@ -26,35 +26,22 @@
         <div class="navbar" id="navbar">
             <a href="home.html">Home</a>
             <a href="katalog.html">Katalog</a>
-            <a href="#">Customer Service</a>
+            <a href="dashbord.html">Dashboard</a>
             <a href="#">About Us</a>
         </div>
     </div>
 
     <main>
         <div class="content">
-            <div class="dashbord">
-                <div class="card">
-                    <h3>Total Penjualan</h3>
-                    <p id="total-sales"></p>
-                </div>
-                <div class="card">
-                    <h3>Rata-rata Harga Penjualan</h3>
-                    <p id="average-price"></p>
-                </div>
-                <div class="card">
-                    <h3>Total Nilai Penjualan</h3>
-                    <p id="total-value"></p>
-                </div>
-            </div>
-            
             <table style="border-collapse: collapse; width: 100%" border="2">
                 <thead>
                   <th>NO</th>
                   <th>BOROUGH</th>
                   <th>ADDRESS</th>
                   <th>LOT</th>
+                  <th>TAX CLASS</th>
                   <th>SALE PRICE</th>
+                  <th>SALE DATE</th>
                 </thead>
                 <tbody id="data">
                 </tbody>
@@ -64,9 +51,9 @@
     <div class="katalog-search">
         <div class="katalog-search-button">
             <input type="text" placeholder="Lokasi">
+            <input type="text" placeholder="Alamat">
+            <input type="text" placeholder="Banyak Rumah">
             <input type="text" placeholder="Tipe Rumah">
-            <input type="text" placeholder="Kamar Tidur">
-            <input type="text" placeholder="Luas">
             <input type="text" placeholder="Harga">
             <button class="button-search">
               <i class="fas fa-search"></i> Cari
@@ -123,7 +110,9 @@
             <td>${filteredData[i].BOROUGH}</td>
             <td>${filteredData[i].NEIGHBORHOOD}</td>
             <td>${filteredData[i]['TOTAL UNITS']}</td>
+            <td>${filteredData[i]['TAX CLASS AT PRESENT']}</td>
             <td>${filteredData[i]['SALE PRICE']}</td>
+            <td>${filteredData[i]['SALE DATE']}</td>
         </tr>
         `;
     }
