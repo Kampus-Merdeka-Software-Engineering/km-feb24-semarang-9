@@ -39,6 +39,33 @@
         </div>
     </div>
 
+    <div class="content">
+        <table style="border-collapse: collapse; width: 100%" border="2">
+            <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>BOROUGH</th>
+                    <th>ADDRESS</th>
+                    <th>YEAR BUILT</th>
+                    <th>SALE PRICE</th>
+                    <th>SALE DATE</th>
+                </tr>
+            </thead>
+            <tbody id="data"></tbody>
+        </table>
+        <div class="pagination">
+            <button onclick="prevPage()">Prev</button>
+            <span id="page-number">1</span>
+            <button onclick="nextPage()">Next</button>
+            <label for="rows-per-page">Rows per page:</label>
+            <select id="rows-per-page" onchange="changeRowsPerPage()">
+                <option value="10">10</option>
+                <option value="15" selected>15</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+    </div>
+
     <div class="chart">
         <div class="sales-price">
             <h1>Total Sales Price by Borough</h1>
@@ -48,6 +75,19 @@
             <h1>Average Sales Price by Tax Class</h1>
             <canvas id="taxClassSalesChart"></canvas>
         </div>
+        <div class="building-taxClass">
+            <h1>Grafik Building by Tax Class</h1>
+            <div>
+                <h3>Filter</h3>
+                <label><input type="checkbox" class="taxClassFilter" value="1" checked> Kelas 1</label>
+                <label><input type="checkbox" class="taxClassFilter" value="2" checked> Kelas 2</label>
+                <label><input type="checkbox" class="taxClassFilter" value="3" checked> Kelas 3</label>
+                <label><input type="checkbox" class="taxClassFilter" value="4" checked> Kelas 4</label>
+            </div>
+            <div class="taxClassBuildingChart">
+                <canvas id="taxClassBuildingChart" width="400" height="200"></canvas>
+            </div>
+        </div>
     </div>
     
 
@@ -55,5 +95,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="Javascript/sales-price.js"></script>
 <script src="Javascript/tax-class.js"></script>
+<script src="Javascript/script.js"></script>
+<script src="Javascript/taxClassBuilding.js"></script>
 </body>
 </html>

@@ -33,102 +33,23 @@
 
     <main>
         <div class="content">
-            <table style="border-collapse: collapse; width: 100%" border="2">
-                <thead>
-                  <th>NO</th>
-                  <th>BOROUGH</th>
-                  <th>ADDRESS</th>
-                  <th>LOT</th>
-                  <th>TAX CLASS</th>
-                  <th>SALE PRICE</th>
-                  <th>SALE DATE</th>
-                </thead>
-                <tbody id="data">
-                </tbody>
-            </table>
+            <div class="teks-content">
+                <h2>Selamat datang di website</h2>
+                <h3>MSIB Study Independent</h3>
+                <h4>Revou - Team 9</h4>
+                <a href="https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-semarang-9">
+                    <img width="50px" height="50px" src="Gambar/Github.png" alt="Github"> 
+                </a>
+                <a href="">
+                    <img width="50px" height="50px" src="Gambar/WA.png" alt="whatsapp">
+                </a>
+            </div>
+            <div class="img-content">
+                <img width="400" height="400" src="Gambar/Revou.png" alt="Revou">
+            </div>
         </div>
     </main>
-    <div class="katalog-search">
-        <div class="katalog-search-button">
-            <input type="text" placeholder="Lokasi">
-            <input type="text" placeholder="Alamat">
-            <input type="text" placeholder="Banyak Rumah">
-            <input type="text" placeholder="Tipe Rumah">
-            <input type="text" placeholder="Harga">
-            <button class="button-search">
-              <i class="fas fa-search"></i> Cari
-            </button>
-        </div>
-    </div>
-    <div class="katalog-content">
-        <h1>Our Recomendation</h1>
-    </div>
-    <div class="katalog-content1">
-        <div class="katalog-box1">
-            <div class="katalog-content1-line"></div>
-        </div>
-        <div class="katalog-box2">
-            <div class="katalog-content1-line"></div>
-        </div>
-        <div class="katalog-box3">
-            <div class="katalog-content1-line"></div>
-        </div>
-        <div class="katalog-box4">
-            <div class="katalog-content1-line"></div>
-        </div>
-    </div>
- 
-</body>
-
-<script>
-    const dataTable = document.getElementById("data");
-
-    let page = 1;
-    let limit = 15;
-
-    fetch("./data/data-tim-09.json")
-    .then((res) => {
-        if (!res.ok) {
-        throw new Error
-            (`HTTP error! Status: ${res.status}`);
-        }
-        return res.json();
-    })
-    .then((data) => {
-        const filteredData = data.filter(
-        (el) => el['SALE PRICE'] >= 200000
-        )
-        .sort((a, b) => a['SALE PRICE'] - b['SALE PRICE']);
-
-        let dataBody = "";
-
-    for (let i = 0; i < filteredData.length; i++) {
-    if (i >= (page - 1) * limit && i < limit * page) {
-        dataBody += `
-        <tr>
-            <td>${i + 1}</td>
-            <td>${filteredData[i].BOROUGH}</td>
-            <td>${filteredData[i].NEIGHBORHOOD}</td>
-            <td>${filteredData[i]['TOTAL UNITS']}</td>
-            <td>${filteredData[i]['TAX CLASS AT PRESENT']}</td>
-            <td>${filteredData[i]['SALE PRICE']}</td>
-            <td>${filteredData[i]['SALE DATE']}</td>
-        </tr>
-        `;
-    }
-    }
-    dataTable.innerHTML = dataBody;
-    })
-    .catch((error) => {
-        console.log({ error })
-        alert("Error: " + JSON.stringify(error));
-    });
-
-    function toggleMenu() {
-        const navbar = document.getElementById('navbar');
-        navbar.classList.toggle('active');
-    }
-
+    </main>
     
-</script>
+</body>
 </html>
