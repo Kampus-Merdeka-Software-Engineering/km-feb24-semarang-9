@@ -177,3 +177,35 @@ th, td {
     }
 
 }
+
+.avarange-sales {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    height: auto;
+    margin: 20px;
+    padding: 20px;
+    h1 {
+        text-align: center;
+    }
+    label {
+        font-size: 11px;
+    }
+    .Avarange-salesChart {
+        margin-top: 10px;
+    }
+}
+
+.propertyAgeChart {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    height: auto;
+    margin: 20px;
+    padding: 20px;
+    h1 {
+        text-align: center;
+    }
+}
