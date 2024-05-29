@@ -73,6 +73,19 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.content2 {
+    p {
+        text-align: center;
+        font-size: 65px;
+    }
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 30px;
+    margin: 30px;
+    padding: 20px;
+}
+
 table {
     background-color: white;
     width: 100%;
@@ -208,4 +221,13 @@ th, td {
     h1 {
         text-align: center;
     }
+}
+
+.sales-trends {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px 20px;
 }
