@@ -4,7 +4,8 @@ let limit = 20;
 let originalData = [];
 let filteredData = [];
 
-fetch("./data/data-tim-09.json")
+// Fetch data from JSON file
+fetch("/data/data-tim-09.json")
     .then(res => {
         if (!res.ok) {
             throw new Error(`HTTP error! Status: ${res.status}`);
@@ -13,6 +14,7 @@ fetch("./data/data-tim-09.json")
     })
     .then(data => {
         originalData = data;
+        populateFilterOptions();
         filteredData = originalData;
         renderTable();
     })
@@ -20,6 +22,40 @@ fetch("./data/data-tim-09.json")
         console.log({ error });
         alert("Error: " + JSON.stringify(error));
     });
+
+function populateFilterOptions() {
+    const boroughSet = new Set(originalData.map(item => item.BOROUGH));
+    const neighborhoodSet = new Set(originalData.map(item => item.NEIGHBORHOOD));
+    
+    const boroughFilter = document.getElementById("borough-filter");
+    boroughSet.forEach(borough => {
+        const option = document.createElement("option");
+        option.value = borough;
+        option.textContent = borough;
+        boroughFilter.appendChild(option);
+    });
+
+    const neighborhoodFilter = document.getElementById("neighborhood-filter");
+    neighborhoodSet.forEach(neighborhood => {
+        const option = document.createElement("option");
+        option.value = neighborhood;
+        option.textContent = neighborhood;
+        neighborhoodFilter.appendChild(option);
+    });
+}
+
+function applyFilters() {
+    const boroughFilter = document.getElementById("borough-filter").value;
+    const neighborhoodFilter = document.getElementById("neighborhood-filter").value;
+
+    filteredData = originalData.filter(item => {
+        return (boroughFilter === "" || item.BOROUGH === boroughFilter) &&
+               (neighborhoodFilter === "" || item.NEIGHBORHOOD === neighborhoodFilter);
+    });
+
+    page = 1; // Reset to first page
+    renderTable();
+}
 
 function changeRowsPerPage() {
     limit = parseInt(document.getElementById("rows-per-page").value);

@@ -40,6 +40,20 @@
     </div>
 
     <div class="content">
+        <div class="filter-tabel">
+            <div>
+                <label for="borough-filter">Filter by Borough:</label>
+                <select id="borough-filter" onchange="applyFilters()">
+                    <option value="">All Boroughs</option>
+                </select>
+            </div>
+            <div>
+                <label for="neighborhood-filter">Filter by Neighborhood:</label>
+                <select id="neighborhood-filter" onchange="applyFilters()">
+                    <option value="">All Neighborhoods</option>
+                </select>
+            </div>
+        </div>
         <table style="border-collapse: collapse; width: 100%" border="2">
             <thead>
                 <tr>
