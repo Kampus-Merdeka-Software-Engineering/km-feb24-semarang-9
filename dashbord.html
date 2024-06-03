@@ -68,6 +68,12 @@
 
     <div class="content2">
         <p><strong>New York City Property Sales Dashboard</strong></p>
+        <div>
+            <label for="saleDateFilter">Filter Tanggal Penjualan:</label>
+            <select id="saleDateFilter">
+                <option value="all">Semua Tanggal</option>
+            </select>
+        </div>
         <div class="chart">
             <div class="sales-price">
                 <h1>Total Sales Price by Borough</h1>
@@ -97,10 +103,18 @@
                 <h1>Distribution Building Preoperty by Age  </h1>
                 <canvas id="propertyAgeChart"></canvas>
             </div>
+            <div class="chart">
+                <div class="sales-trends">
+                    <h1>Sales Trends for Residential Units and Commercial Units</h1>
+                    <input type="checkbox" id="toggleFill" name="toggleFill" checked>
+                    <label for="toggleFill">Fill Chart</label>
+                    <canvas id="salesTrendsChart" width="800" height="400"></canvas>
+                </div>
+            </div>
             <div class="avarange-sales">
                 <div>
                     <h1>Avarange Sales By Neighborhood</h1>
-                    <p>Filter</p>
+                    <h4>Filter</h4>
                     <label><input type="checkbox" value="BLOOMFIELD" checked> BLOOMFIELD</label>
                     <label><input type="checkbox" value="MIDTOWN CBD" checked> MIDTOWN CBD</label>
                     <label><input type="checkbox" value="FASHION" checked> FASHION</label>
@@ -117,25 +131,13 @@
                 </div>
             </div>
         </div>
-    
-        <div class="chart">
-            <div class="sales-trends">
-                <h1>Sales Trends for Residential Units and Commercial Units</h1>
-                <input type="checkbox" id="toggleFill" name="toggleFill" checked>
-                <label for="toggleFill">Fill Chart</label>
-                <canvas id="salesTrendsChart" width="800" height="400"></canvas>
-            </div>
-        </div>
     </div>
 
     
     
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="Javascript/sales-price.js"></script>
-<script src="Javascript/tax-class.js"></script>
-<script src="Javascript/script.js"></script>
-<script src="Javascript/taxClassBuilding.js"></script>
 <script src="Javascript/avarange-sales.js"></script>
-<script src="Javascript/salesTrendsChart.js"></script>
+<script src="Javascript/script.js"></script>
+
 </body>
 </html>
