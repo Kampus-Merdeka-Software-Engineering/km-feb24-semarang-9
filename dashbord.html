@@ -145,6 +145,50 @@
                 </div>
             </div>
         </div>
+        <div class="show-data">
+            <img class="img-show-data" src="/Gambar/data.jpg" alt="Show Data">
+            <div class="teks-show-data">
+                <h1>"Would you like to explore more detailed data and again deeper insights? Discover additional information and further analysis to enhance your understanding."
+                </h1>
+                <a href="https://lookerstudio.google.com/reporting/528b8296-5b69-4d15-b717-0efc83a3c8ce" target="_blank"><button class="btn-show-data">Show More Data</button></a>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="teks-question">
+                <h1>Have</h1>
+                <h1>A Question?</h1>
+                <br>
+                <h2>We're here to assist you in any way we can. Whether you have questions about our products, need help with your order, or want to know more about our services, don't hesitate to reach out. Our dedicated team is standing by, ready to provide you with the information and support you need to have a great experience with us.</h2>
+                <button class="btn-question" onclick="showFeedbackForm()">Get Answer !</button>
+            </div>
+            <img class="img-question" src="/Gambar/questions.png" alt="">
+        </div>
+    </div>
+
+    <div id="feedbackPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hideFeedbackPopup()">&times;</span>
+            <h2>Feedback Form</h2>
+            <form id="feedbackFormContent" class="feedback-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    
+    <div id="thankYouPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hideThankYouPopup()">&times;</span>
+            <h2>Thank You!</h2>
+            <p id="thankYouText"></p>
+        </div>
+    </div>
     </div>
 
     

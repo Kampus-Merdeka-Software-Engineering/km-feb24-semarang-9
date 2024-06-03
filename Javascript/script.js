@@ -99,6 +99,34 @@ function nextPage() {
     }
 }
 
+// Function Feed Back Form
+function showFeedbackForm() {
+    var feedbackPopup = document.getElementById("feedbackPopup");
+    feedbackPopup.style.display = "block"; // Tampilkan popup formulir umpan balik
+}
+
+function hideFeedbackPopup() {
+    var feedbackPopup = document.getElementById("feedbackPopup");
+    feedbackPopup.style.display = "none"; // Sembunyikan popup formulir umpan balik
+}
+
+function hideThankYouPopup() {
+    var thankYouPopup = document.getElementById("thankYouPopup");
+    thankYouPopup.style.display = "none"; // Sembunyikan popup pesan terima kasih
+}
+
+document.getElementById("feedbackFormContent").addEventListener("submit", function(event) {
+    event.preventDefault(); // Menghentikan pengiriman formulir
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+    var thankYouText = "Thank you, " + name + "! Your message has been submitted.";
+    document.getElementById("thankYouText").textContent = thankYouText;
+    var thankYouPopup = document.getElementById("thankYouPopup");
+    thankYouPopup.style.display = "block"; // Tampilkan popup pesan terima kasih
+    hideFeedbackPopup(); // Sembunyikan popup formulir umpan balik setelah pengiriman
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     let chartInstances = [];
 
