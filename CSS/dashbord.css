@@ -74,16 +74,16 @@ body {
 }
 
 .content2 {
-    p {
-        text-align: center;
-        font-size: 65px;
-    }
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 30px;
     margin: 30px;
     padding: 20px;
+    p {
+        text-align: center;
+        font-size: 65px;
+    }
 }
 
 .filter-tabel {
