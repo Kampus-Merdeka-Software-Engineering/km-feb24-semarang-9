@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color:rgba(23, 36, 156, 1) ;
+    background-color:white;
 }
 
 .header {
@@ -42,6 +42,12 @@ body {
     text-decoration: none;
 }
 
+h1 {
+    font-size: 40px;
+    text-align: center;
+    margin: 10px;
+}
+
 .content {
     background-color: white;
     width: auto;
@@ -52,6 +58,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
+    flex-wrap: wrap;    
     justify-content: space-between;
     .teks-content {
         font-size: 50px;
@@ -64,6 +71,195 @@ body {
         padding-right: 20px;
         margin: 20px;
     }
+    .img-content {
+        padding-right: 20px;
+        margin: 20px;
+    }
+    .teks-content2 {
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+        h1 {
+            font-size: 50px ;
+            text-align: center;
+        }
+    }
 }
 
+.content-our-team {
+    background-color: white;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px;
+}
 
+  
+.content1 {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 20px;
+    gap: 110px;
+}
+
+.content2 {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 20px;
+  justify-content: space-between;
+  margin: 50px;
+}
+
+.content3 {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 20px;
+  justify-content: space-between;
+  margin: 50px;
+}
+
+.content4 {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 20px;
+  justify-content: space-between;
+  margin: 50px;
+}
+
+.card {
+  max-width: 350px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  padding-right: 25px;
+  padding-bottom: 30px;
+  padding-left: 25px;
+}
+
+.img-member {
+  clip-path: circle(50% at 50% 50%);
+  width: 130px;
+  height: 130px;
+}
+
+.img-member-team {
+  width: 100%;
+
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.position {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+}
+
+.text-tambahan{
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  color: rgb(122, 122, 122);
+  line-height: 30px;
+}
+
+.social-icons {
+  margin-top: 20px;
+  width: 70px;
+  gap: 15px;
+  display: flex;
+  justify-content: space-between;
+  
+} 
+
+.content-contact-us {
+    margin: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 20px;
+    .img-contact {
+        padding-right: 100px;
+    }
+}
+
+.contact-form {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+    .error {
+        color: red;
+        font-size: 0.9em;
+    }
+}
+.contact-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.contact-form button {
+    display: flex;
+    margin: auto;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact-form button:hover {
+    background-color: #575757;
+}
+.footer {
+    background-color:  rgba(23, 36, 156, 1);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.footer .footer-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.footer .footer-social-icons img {
+    width: 30px;
+    height: 30px;
+}

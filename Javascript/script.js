@@ -5,7 +5,7 @@ let originalData = [];
 let filteredData = [];
 
 // Fetch data from JSON file
-fetch("./data/data-tim-09.json")
+fetch("/data/data-tim-09.json")
     .then(res => {
         if (!res.ok) {
             throw new Error(`HTTP error! Status: ${res.status}`);
