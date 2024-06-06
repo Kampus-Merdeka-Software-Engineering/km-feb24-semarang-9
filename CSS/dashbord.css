@@ -422,3 +422,25 @@ th, td {
 .feedback-form input[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+@media screen and (min-width: 1700px) {
+    .content2 .chart canvas {
+        max-width: none;
+        width: 100%;
+        height: auto; 
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .chart canvas {
+        max-width: 90%;
+        height: 90%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .chart canvas {
+        max-width: 100%;
+        height: auto;
+    }
+}

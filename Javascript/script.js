@@ -1,6 +1,6 @@
 const dataTable = document.getElementById("data");
 let page = 1;
-let limit = 20;
+let limit = 10;
 let originalData = [];
 let filteredData = [];
 
