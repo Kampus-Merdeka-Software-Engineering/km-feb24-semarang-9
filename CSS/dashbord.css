@@ -23,9 +23,9 @@ body {
 }
 
 .teks-header {
-    color:rgba(255, 229, 0, 1);
+    color: white;
     h2 {
-        font-size: 16px;
+        font-size: 20px;
     }
 }
 
@@ -82,7 +82,20 @@ body {
     padding: 20px;
     p {
         text-align: center;
-        font-size: 65px;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    .filter-chart {
+        margin-left: 20px;
+        font-size: 20px;
+        select {
+            background-color: blue;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+        }
     }
 }
 
@@ -101,6 +114,7 @@ body {
         border: none;
         color: white;
         font-weight: bold;
+        cursor: pointer;
     }
 }
 
@@ -147,6 +161,7 @@ th, td {
         border-radius: 5px;
         color: white;   
         background-color: blue;
+        cursor: pointer;
     }
 }
 
@@ -304,7 +319,7 @@ th, td {
         text-align: center;
         h1 {
             font-size: 70px;
-            line-height: 55px;
+            line-height: 70px;
             text-align: left;
             font-family: Georgia, 'Times New Roman', Times, serif;
         }

@@ -22,9 +22,9 @@ body {
 }
 
 .teks-header {
-    color:rgba(255, 229, 0, 1);
+    color: white;
     h2 {
-        font-size: 16px;
+        font-size: 20px;
     }
 }
 
@@ -63,16 +63,16 @@ h1 {
     .teks-content {
         font-size: 50px;
         padding-top: 55px;
-        padding-left: 10px;
+        padding-left: 40px;
         margin: 20px;
         text-align: center;
+        img {
+            margin: 5px;
+            margin-top: 30px;
+        }
     }
     .img-content {
-        padding-right: 20px;
-        margin: 20px;
-    }
-    .img-content {
-        padding-right: 20px;
+        padding-right: 100px;
         margin: 20px;
     }
     .teks-content2 {
@@ -84,6 +84,52 @@ h1 {
             text-align: center;
         }
     }
+}
+  
+.section__container {
+    min-height: 70vh;
+    max-width: var(--max-width);
+    margin: auto;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+  
+.section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+  
+.title-section-content {
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+  
+.title-section-content span {
+    font-weight: 600;
+}
+  
+.description-section-content {
+    line-height: 1.5rem;
+    color: var(--text-light);
+    font-size: 20px;
+    padding-left: 20px;
+}
+  
+  
+.image-section-content {
+    display: grid;
+    place-items: center;
+}
+  
+.image-section-content img {
+    width: min(50rem, 90%);
+    border-radius: 100%;
 }
 
 .content-our-team {

@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
         chartInstances.push(chart);
 
         document.getElementById('total-sales').innerText = totalCount;
-        document.getElementById('average-price').innerText = (totalSales / totalCount).toFixed(2);
+        document.getElementById('average-price').innerText = (totalSales / totalCount).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
         document.getElementById('total-value').innerText = totalSales.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     }
 
