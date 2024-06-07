@@ -101,6 +101,7 @@ body {
 
 .filter-tabel {
     display: flex;
+    justify-content: space-between;
     gap: 20px;
     margin: 5px;
     padding: 5px;

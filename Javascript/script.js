@@ -42,15 +42,52 @@ function populateFilterOptions() {
         option.textContent = neighborhood;
         neighborhoodFilter.appendChild(option);
     });
+
+     // New filter for Year Built
+     const yearBuiltSet = new Set(originalData.map(item => item['YEAR BUILT']));
+     const yearBuiltFilter = document.getElementById("filter-year");
+     yearBuiltSet.forEach(yearBuilt => {
+         const option = document.createElement("option");
+         option.value = yearBuilt;
+         option.textContent = yearBuilt;
+         yearBuiltFilter.appendChild(option);
+     });
+ 
+     // New filter for Sale Price
+     const salePriceSet = new Set(originalData.map(item => item['SALE PRICE']));
+     const salePriceFilter = document.getElementById("filter-price");
+     salePriceSet.forEach(salePrice => {
+         const option = document.createElement("option");
+         option.value = salePrice;
+         option.textContent = salePrice;
+         salePriceFilter.appendChild(option);
+     });
+ 
+     // New filter for Sales Date
+     const salesDateSet = new Set(originalData.map(item => item['SALE DATE']));
+     const salesDateFilter = document.getElementById("filter-date");
+     salesDateSet.forEach(salesDate => {
+         const option = document.createElement("option");
+         option.value = salesDate;
+         option.textContent = salesDate;
+         salesDateFilter.appendChild(option);
+     });
 }
 
 function applyFilters() {
     const boroughFilter = document.getElementById("borough-filter").value;
     const neighborhoodFilter = document.getElementById("neighborhood-filter").value;
+    const yearBuiltFilter = document.getElementById("filter-year").value; // Updated to include year built filter
+    const salePriceFilter = document.getElementById("filter-price").value; // Updated to include sale price filter
+    const salesDateFilter = document.getElementById("filter-date").value; // Updated to include sales date filter
+
 
     filteredData = originalData.filter(item => {
         return (boroughFilter === "" || item.BOROUGH === boroughFilter) &&
-               (neighborhoodFilter === "" || item.NEIGHBORHOOD === neighborhoodFilter);
+               (neighborhoodFilter === "" || item.NEIGHBORHOOD === neighborhoodFilter) &&
+               (yearBuiltFilter === "" || item['YEAR BUILT'] === parseInt(yearBuiltFilter)) && // Filter for year built
+               (salePriceFilter === "" || item['SALE PRICE'] === parseInt(salePriceFilter)) && // Filter for sale price
+               (salesDateFilter === "" || item['SALE DATE'] === salesDateFilter); // Filter for sales date
     });
 
     page = 1; // Reset to first page
