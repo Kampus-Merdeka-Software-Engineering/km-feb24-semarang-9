@@ -23,70 +23,148 @@
             <a href="index.html">Home</a>
             <a href="katalog.html">Katalog</a>
             <a href="dashbord.html">Dashboard</a>
-            <a href="#">About Us</a>
+            <a href="index.html/#content-our-team">About Us</a>
         </div>
     </div>
 
-    <div class="katalog-search">
-        <div class="katalog-search-button">
-            <input type="text" placeholder="Lokasi">
-            <input type="text" placeholder="Alamat">
-            <input type="text" placeholder="Banyak Rumah">
-            <input type="text" placeholder="Tipe Rumah">
-            <input type="text" placeholder="Harga">
-            <button class="button-search">
-              <i class="fas fa-search"></i> Cari
-            </button>
-        </div>
+    <h2>Cari Rekomendasi</h2>
+    <div class="katalog-search-button">
+        <select id="filter-borough">
+            <option value="">Pilih BOROUGH</option>
+        </select>
+        <select id="filter-neighborhood">
+            <option value="">Pilih NEIGHBORHOOD</option>
+        </select>
+        <select id="filter-year">
+            <option value="">Pilih YEAR BUILT</option>
+        </select>
+        <select id="filter-price">
+            <option value="">Pilih SALE PRICE</option>
+        </select>
+        <select id="filter-date">
+            <option value="">Pilih SALE DATE</option>
+        </select>
+        <button class="button-search" onclick="search()">Cari</button>
     </div>
 
-    <div class="katalog-content">
-        <h1>Our Katalog</h1>
-    </div>
-    <div class="katalog-content1">
-        <div class="katalog-box1">
-            <div class="katalog-content1-line"></div>
-            <h3>Cluster xyz</h3>
-            <button class="button-chat1">Chat Now</button>
-            <p>Rp. 5.000.000.000</p>
-        </div>
-
-        <div class="katalog-box2">
-            <div class="katalog-content1-line"></div>
-            <h3>Cluster xyz</h3>
-            <button class="button-chat2">Chat Now</button>
-            <p>Rp. 5.000.000.000</p> 
-        </div>
-    </div>
-    <div class="katalog-content2">
-        <div class="katalog-box3">
-            <div class="katalog-content2-line"></div>
-            <h3>Cluster xyz</h3>
-            <button class="button-chat3">Chat Now</button>
-            <p>Rp. 5.000.000.000</p>
-        </div>
-        <div class="katalog-box4">
-            <div class="katalog-content2-line"></div>
-            <h3>Cluster xyz</h3>
-            <button class="button-chat4">Chat Now</button>
-            <p>Rp. 5.000.000.000</p>
-        </div>
+    <h1>Our NYS Sales Recommendations</h1>
+    <!-- Div untuk menampilkan rekomendasi -->
+    <div class="katalog-content" id="recommendations">
+        <!-- Rekomendasi akan ditampilkan di sini -->
     </div>
 
-    <div class="katalog-content3">
-        <div class="katalog-box5">
-            <div class="katalog-content3-line"></div>
-            <h3>Cluster xyz</h3>
-            <button class="button-chat5">Chat Now</button>
-            <p>Rp. 5.000.000.000</p>
-        </div>
-        <div class="katalog-box6">
-            <div class="katalog-content3-line"></div>
-            <h3>Cluster xyz</h3>
-            <button class="button-chat6">Chat Now</button>
-            <p>Rp. 5.000.000.000</p>
-        </div>
-    </div>
+<script>
+    let originalData = [];
+
+    // Fungsi untuk mengambil data dari JSON
+    fetch("./data/data-tim-09.json")
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+            return res.json();
+        })
+        .then(data => {
+            originalData = data;
+            populateDropdowns();
+        })
+        .catch(error => {
+            console.log({ error });
+            alert("Error: " + JSON.stringify(error));
+        });
+
+    // Fungsi untuk mengisi dropdown dengan opsi yang sesuai dari data JSON
+    function populateDropdowns() {
+        const filterBorough = document.getElementById('filter-borough');
+        const filterNeighborhood = document.getElementById('filter-neighborhood');
+        const filterYear = document.getElementById('filter-year');
+        const filterPrice = document.getElementById('filter-price');
+        const filterDate = document.getElementById('filter-date');
+
+        // Mengumpulkan nilai unik untuk setiap filter
+        const uniqueBoroughs = Array.from(new Set(originalData.map(item => item.BOROUGH)));
+        const uniqueNeighborhoods = Array.from(new Set(originalData.map(item => item.NEIGHBORHOOD)));
+        const uniqueYears = Array.from(new Set(originalData.map(item => item['YEAR BUILT'])));
+        const uniquePrices = Array.from(new Set(originalData.map(item => item['SALE PRICE'])));
+        const uniqueDates = Array.from(new Set(originalData.map(item => item['SALE DATE'])));
+
+        // Mengurutkan nilai untuk setiap filter
+        uniqueBoroughs.sort();
+        uniqueNeighborhoods.sort();
+        uniqueYears.sort((a, b) => a - b);
+        uniquePrices.sort((a, b) => a - b);
+        uniqueDates.sort();
+
+        // Mengisi dropdown dengan nilai unik
+        populateDropdown(filterBorough, uniqueBoroughs);
+        populateDropdown(filterNeighborhood, uniqueNeighborhoods);
+        populateDropdown(filterYear, uniqueYears);
+        populateDropdown(filterPrice, uniquePrices);
+        populateDropdown(filterDate, uniqueDates);
+    }
+
+    // Fungsi untuk mengisi dropdown dengan opsi
+    function populateDropdown(dropdown, values) {
+        values.forEach(value => {
+            const option = document.createElement('option');
+            option.text = value;
+            option.value = value;
+            dropdown.add(option);
+        });
+    }
+
+    // Fungsi untuk melakukan pencarian
+    function search() {
+        const filterBorough = document.getElementById('filter-borough').value;
+        const filterNeighborhood = document.getElementById('filter-neighborhood').value;
+        const filterYear = document.getElementById('filter-year').value;
+        const filterPrice = document.getElementById('filter-price').value;
+        const filterDate = document.getElementById('filter-date').value;
+
+        const recommendations = originalData.filter(item => {
+            // Mengubah filterYear menjadi integer jika bukan string kosong
+            const yearBuiltFilter = filterYear !== '' ? parseInt(filterYear) : '';
+            // Mengubah filterPrice menjadi integer jika bukan string kosong
+            const salePriceFilter = filterPrice !== '' ? parseInt(filterPrice) : '';
+
+            return (filterBorough === '' || item.BOROUGH === filterBorough) &&
+                (filterNeighborhood === '' || item.NEIGHBORHOOD === filterNeighborhood) &&
+                (filterYear === '' || item['YEAR BUILT'] === yearBuiltFilter) &&
+                (filterPrice === '' || item['SALE PRICE'] === salePriceFilter) &&
+                (filterDate === '' || item['SALE DATE'] === filterDate);
+        });
+
+        displayRecommendations(recommendations);
+    }
+
+    // Fungsi untuk menampilkan rekomendasi
+    function displayRecommendations(data) {
+        const recommendationsDiv = document.getElementById('recommendations');
+        recommendationsDiv.innerHTML = '';
+
+        if (data.length === 0) {
+            recommendationsDiv.innerHTML = '<p>Data tidak ditemukan.</p>';
+        } else {
+            data.slice(0, 5).forEach(item => {
+                const recommendationHTML = `
+                    <div class="katalog-box">
+                        <img src="Gambar/Home-Logo.png" alt="">
+                        <h3>${item.NEIGHBORHOOD}</h3>
+                        <button class="button-chat">Chat Now</button>
+                        <div class="recommendation-details">
+                            <p><strong>BOROUGH:</strong> ${item.BOROUGH}</p>
+                            <p><strong>NEIGHBORHOOD:</strong> ${item.NEIGHBORHOOD}</p>
+                            <p><strong>YEAR BUILT:</strong> ${item['YEAR BUILT']}</p>
+                            <p><strong>SALE PRICE:</strong> ${parseInt(item['SALE PRICE']).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
+                            <p><strong>SALE DATE:</strong> ${item['SALE DATE']}</p>
+                        </div>
+                    </div>
+                `;
+                recommendationsDiv.innerHTML += recommendationHTML;
+            });
+        }
+    }
+</script>
     
 </body>
 </html>

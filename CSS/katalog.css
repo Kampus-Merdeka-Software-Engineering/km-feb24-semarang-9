@@ -40,26 +40,34 @@
     text-decoration: none;
 }
 
-.katalog-search {
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 30px;
-    background-color:  rgba(23, 36, 156, 1); */
+h2 {
+    background-color: rgba(23, 36, 156, 1);
+    color: white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 25px;
+    padding-top: 20px;
+}
+
+h1 {
+    padding: 20px;
+    margin: auto;
+    text-align: center;
 }
 
 .katalog-search-button {
     display: flex;
     padding :20px;
-    /* gap: 20px; */
     justify-content: space-between;
     align-items: center;
     background-color:  rgba(23, 36, 156, 1);
 }
 
-.katalog-search-button input {
+.katalog-search-button select {
     padding: 10px;
     width: 200px;
+    border: none;
+    border-radius: 10px;
 }    
 
 .katalog-search-button .button-search {
@@ -73,170 +81,49 @@
 }
 
 .katalog-content {
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-bottom: 30px;
-}
-
-.katalog-content1 {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 139px;
-    margin-bottom: 70px;
+    margin: 20px;
 }
 
-.katalog-box1 {
-    background-color: rgba(217, 217, 217, 1);
+.katalog-box {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 553px;
     height: 360px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 20px;
+    h3 {
+        text-align: center;
+        margin-bottom: 3px;
+    }
+    img {
+        width: 50%;
+        height: auto;
+        justify-content: center;
+        justify-self: center;
+        align-items: center;
+        align-self: center;
+    }
 }
 
-.katalog-content1-line {
-    background-color:rgba(120, 120, 120, 1);
-    width: auto;
-    height: 2px;
-    margin-bottom: 20px;
+.recommendation-details p {
+    margin: 5px;
+    gap: 20px;
 }
 
-.button-chat1 {
+.button-chat {
+    align-self: self-end;
     background-color: rgba(0, 55, 252, 1);
     color: white;
-    width: 165px;
-    height: 49px;
+    width: 130px;
+    height: 130px;
+    padding: 10px;
+    margin: 5px;
     border: none;
     border-radius: 5px;
-    margin-left: 60%;
 }
-
-.katalog-box2 {
-    background-color: rgba(217, 217, 217, 1);
-    width: 553px;
-    height: 360px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-}
-
-.button-chat2 {
-    background-color: rgba(0, 55, 252, 1);
-    color: white;
-    width: 165px;
-    height: 49px;
-    border: none;
-    border-radius: 5px;
-    margin-left: 60%;
-}
-
-.katalog-content2 {
-    display: flex;
-    justify-content: center;
-    gap: 139px;
-    margin-bottom: 70px;
-}
-
-.katalog-box3 {
-    background-color: rgba(217, 217, 217, 1);
-    width: 553px;
-    height: 360px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-}
-
-.katalog-content2-line {
-    background-color:rgba(120, 120, 120, 1);
-    width: auto;
-    height: 2px;
-    margin-bottom: 20px;
-}
-
-.button-chat3 {
-    background-color: rgba(0, 55, 252, 1);
-    color: white;
-    width: 165px;
-    height: 49px;
-    border: none;
-    border-radius: 5px;
-    margin-left: 60%;
-}
-
-.katalog-box4 {
-    background-color: rgba(217, 217, 217, 1);
-    width: 553px;
-    height: 360px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-}
-
-.button-chat4 {
-    background-color: rgba(0, 55, 252, 1);
-    color: white;
-    width: 165px;
-    height: 49px;
-    border: none;
-    border-radius: 5px;
-    margin-left: 60%;
-}
-
-.katalog-content3 {
-    display: flex;
-    justify-content: center;
-    gap: 139px;
-    margin-bottom: 70px;
-}
-
-.katalog-box5 {
-    background-color: rgba(217, 217, 217, 1);
-    width: 553px;
-    height: 360px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-}
-
-.katalog-content3-line {
-    background-color:rgba(120, 120, 120, 1);
-    width: auto;
-    height: 2px;
-    margin-bottom: 20px;
-}
-
-.button-chat5 {
-    background-color: rgba(0, 55, 252, 1);
-    color: white;
-    width: 165px;
-    height: 49px;
-    border: none;
-    border-radius: 5px;
-    margin-left: 60%;
-}
-
-.katalog-box6 {
-    background-color: rgba(217, 217, 217, 1);
-    width: 553px;
-    height: 360px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-}
-
-.button-chat6 {
-    background-color: rgba(0, 55, 252, 1);
-    color: white;
-    width: 165px;
-    height: 49px;
-    border: none;
-    border-radius: 5px;
-    margin-left: 60%;
-}
-

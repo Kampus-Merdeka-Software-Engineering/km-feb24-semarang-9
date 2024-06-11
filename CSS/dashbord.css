@@ -71,6 +71,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: scroll;
 }
 
 .content2 {
@@ -80,6 +81,7 @@ body {
     margin: 30px;
     margin: 30px;
     padding: 20px;
+    overflow-x: scroll;
     p {
         text-align: center;
         font-size: 40px;

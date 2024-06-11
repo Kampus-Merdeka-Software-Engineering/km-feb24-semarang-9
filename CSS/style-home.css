@@ -309,3 +309,116 @@ h1 {
     width: 30px;
     height: 30px;
 }
+
+/* Untuk lebar layar < 768px (perangkat mobile) */
+@media (max-width: 767px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .img-header {
+        margin-bottom: 20px;
+    }
+
+    .navbar {
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .teks-content {
+        h2, h3, h4 {
+            font-size: 50%;
+        }
+        a img{
+            width: 25px;
+            height: auto;
+        }
+    }
+
+    .img-content img {
+        width: 170px;
+        height: auto;
+    }
+
+    .teks-content2 h1 {
+        font-size: 20px;
+    }    
+
+    .teks-content2 h2 {
+        font-size: 50%;
+    }
+    .card {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content-our-team {
+        width: auto;
+        .content1 {
+            .card {
+                width: 50%;
+                height: auto;
+            }
+            .img-member .img-member-team {
+                width: 50%;
+            }
+        }
+    }
+}
+
+/* Untuk lebar layar 768px - 1023px (perangkat tablet) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header {
+        padding-right: 10px;
+    }
+
+    .navbar {
+        width: auto;
+        margin-right: 10px;
+    }
+
+    .content {
+        margin: 20px;
+    }
+
+    .card {
+        max-width: 45%;
+        margin-right: 20px;
+    }
+
+    .content1, .content2, .content3, .content4 {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Untuk lebar layar >= 1024px (perangkat desktop) */
+@media (min-width: 1024px) {
+    .header {
+        padding-right: 30px;
+    }
+
+    .navbar {
+        width: calc(100% - 500px);
+    }
+
+    .content {
+        margin: 30px;
+    }
+
+    .card {
+        max-width: 30%;
+        margin-right: 20px;
+    }
+}
